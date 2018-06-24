@@ -1,0 +1,12 @@
+Eenie Meenie
+
+On click of Add Choice button: 
+- Append a new input to form div with appropriate classes
+
+On click of Start button:
+- Loop through each of the inputs
+    - Store values as an array
+-Using math().random pick random number between 0 and length of input array
+    -Round to nearest whole number using math().floor
+    -Select corresponding array value
+-Serve chosen array value to user
