@@ -17,15 +17,22 @@ function addChoice(){
     document.getElementById('inputDiv').appendChild(newInput);
 }
 
+// Random number function
+function randomNumber(){
+
+}
+
 //Event listener on Add Choice Button
 addChoiceBtn.addEventListener('click', (e) => {
     addChoice();
+    inputCount++;
 });
 
 // Event listener on Remove Choice button
     // Removes last child of input div
 removeChoiceBtn.addEventListener('click', (e) => {
     inputDiv.removeChild(inputDiv.lastChild);
+    inputCount--;
 });
 
 // // Event listener on Start button
@@ -34,5 +41,7 @@ startBtn.addEventListener('click', (e) => {
         let inputs = document.querySelectorAll('input');
         let x = inputs[i].value;
         choiceArray.push(x);
+        inputs[i].value = "";    
     }
+    
 });
