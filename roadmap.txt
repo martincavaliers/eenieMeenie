@@ -3,6 +3,9 @@ Eenie Meenie
 On click of Add Choice button: 
 - Append a new input to form div with appropriate classes
 
+On click of Delete Choice button:
+- Remove last child of inputDiv
+
 On click of Start button:
 - Loop through each of the inputs
     - Store values as an array
