@@ -18,8 +18,8 @@ function addChoice(){
 }
 
 // Random number function
-function randomNumber(){
-
+function randomNumber(max){
+    return Math.floor(Math.random() * Math.floor(max));  
 }
 
 //Event listener on Add Choice Button
@@ -37,6 +37,9 @@ removeChoiceBtn.addEventListener('click', (e) => {
 
 // // Event listener on Start button
 startBtn.addEventListener('click', (e) => {
+    // Clears array each time start button is pressed
+    choiceArray = [];
+    // Cycles through all inputs, takes value and then pushes to array
     for(let i = 0; i < inputCount; i++){
         let inputs = document.querySelectorAll('input');
         let x = inputs[i].value;
@@ -44,4 +47,11 @@ startBtn.addEventListener('click', (e) => {
         inputs[i].value = "";    
     }
     
+    // Create random number for value selection
+    let number = randomNumber(inputCount);
+
+    // Creates list element and appends it to displayList
+    const choiceOutput = document.createElement("LI");
+    choiceOutput.textContent = choiceArray[number];
+    document.getElementById("displayList").appendChild(choiceOutput);
 });
