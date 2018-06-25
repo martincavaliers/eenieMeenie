@@ -42,16 +42,23 @@ startBtn.addEventListener('click', (e) => {
     // Cycles through all inputs, takes value and then pushes to array
     for(let i = 0; i < inputCount; i++){
         let inputs = document.querySelectorAll('input');
-        let x = inputs[i].value;
-        choiceArray.push(x);
-        inputs[i].value = "";    
-    }
+        if(!inputs[i].value){
+            alert("Please make sure all inputs are complete");
+        } else{
+            let x = inputs[i].value;
+            choiceArray.push(x);
     
-    // Create random number for value selection
-    let number = randomNumber(inputCount);
-
-    // Creates list element and appends it to displayList
-    const choiceOutput = document.createElement("LI");
-    choiceOutput.textContent = choiceArray[number];
-    document.getElementById("displayList").appendChild(choiceOutput);
+            // Create random number for value selection
+            let number = randomNumber(inputCount);
+            console.log(number);
+    
+            // Creates list element and appends it to displayList
+            const choiceOutput = document.createElement("LI");
+            choiceOutput.textContent = choiceArray[number];
+            document.getElementById("displayList").appendChild(choiceOutput);
+    
+            inputs[i].value = "";  
+        }
+     
+    }    
 });
