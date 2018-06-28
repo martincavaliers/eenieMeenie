@@ -62,5 +62,7 @@ startBtn.addEventListener('click', (e) => {
 
 // Event listener on clearLogBtn
 clearLogBtn.addEventListener('click', (e) => {
-    
+    // Clears Choice Log
+    const displayList = document.getElementById('displayList');
+    displayList.innerHTML = "";
 });
