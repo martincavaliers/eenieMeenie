@@ -14,7 +14,7 @@ function addChoice(){
     const choice = inputDiv.childElementCount + 1;
     const newInput = document.createElement("INPUT");
     newInput.setAttribute("placeholder", "Choice " + choice);
-    newInput.setAttribute("class", "col-xs-6"); 
+    newInput.setAttribute("class", "col-sm-6"); 
     document.getElementById('inputDiv').appendChild(newInput);
 }
 
@@ -40,24 +40,33 @@ removeChoiceBtn.addEventListener('click', (e) => {
 startBtn.addEventListener('click', (e) => {
     // Clears array each time start button is pressed
     choiceArray = [];
+    // Declares inputs as function to be used throughout event listener
+    let inputs = document.querySelectorAll('input');
+    let noValue;
     // Cycles through all inputs, takes value and then pushes to array
     for(let i = 0; i < inputCount; i++){
-        let inputs = document.querySelectorAll('input');
-
+        // Evaluating for empty input fields
+        if(!inputs[i].value){
+            noValue = true;
+        }else{
         let x = inputs[i].value;
         choiceArray.push(x);
         // Clears input fields
-        inputs[i].value = "";    
+        inputs[i].value = ""; 
+        }   
     }
+    if(noValue === true){
+        alert("Please make sure all choices are input correctly");     
+    }else{
     // Create random number for value selection
     let number = randomNumber(inputCount);
     // Select which value of choiceArray to display
     let choice = choiceArray[number];
-    console.log(choice);
     // Log choice into list item
     const choiceOutput = document.createElement("LI");
     choiceOutput.textContent = choice;
-    document.getElementById("displayList").appendChild(choiceOutput);   
+    document.getElementById("displayList").appendChild(choiceOutput);
+    } 
 });
 
 // Event listener on clearLogBtn
