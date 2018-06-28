@@ -3,6 +3,7 @@
 const addChoiceBtn = document.getElementById('addChoiceBtn');
 const removeChoiceBtn = document.getElementById('removeChoiceBtn');
 const startBtn = document.getElementById('startBtn');
+const clearLogBtn = document.getElementById('clearLogBtn');
 const inputDiv = document.getElementById('inputDiv');
 let inputCount = inputDiv.childElementCount;
 
@@ -19,7 +20,7 @@ function addChoice(){
 
 // Random number function
 function randomNumber(max){
-    return Math.floor(Math.random() * Math.floor(max));  
+    return Math.floor(Math.random() * max); 
 }
 
 //Event listener on Add Choice Button
@@ -42,23 +43,24 @@ startBtn.addEventListener('click', (e) => {
     // Cycles through all inputs, takes value and then pushes to array
     for(let i = 0; i < inputCount; i++){
         let inputs = document.querySelectorAll('input');
-        if(!inputs[i].value){
-            alert("Please make sure all inputs are complete");
-        } else{
-            let x = inputs[i].value;
-            choiceArray.push(x);
+
+        let x = inputs[i].value;
+        choiceArray.push(x);
+        // Clears input fields
+        inputs[i].value = "";    
+    }
+    // Create random number for value selection
+    let number = randomNumber(inputCount);
+    // Select which value of choiceArray to display
+    let choice = choiceArray[number];
+    console.log(choice);
+    // Log choice into list item
+    const choiceOutput = document.createElement("LI");
+    choiceOutput.textContent = choice;
+    document.getElementById("displayList").appendChild(choiceOutput);   
+});
+
+// Event listener on clearLogBtn
+clearLogBtn.addEventListener('click', (e) => {
     
-            // Create random number for value selection
-            let number = randomNumber(inputCount);
-            console.log(number);
-    
-            // Creates list element and appends it to displayList
-            const choiceOutput = document.createElement("LI");
-            choiceOutput.textContent = choiceArray[number];
-            document.getElementById("displayList").appendChild(choiceOutput);
-    
-            inputs[i].value = "";  
-        }
-     
-    }    
 });
