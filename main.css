@@ -17,17 +17,19 @@ body{
 /* Inputs */
 
 #inputDiv input{
-    margin: 30px 0 0 0;  
+    margin: 20px 0 0 0;   
 }
 
 #inputDiv input:focus { 
     border: solid rgb(96, 198, 211);
-
-
-
+    text-emphasis-color: black;
+}
 /* ------------------------------------------------ */
 
 /* Buttons */
 
+#btnDiv button{
+    margin: 30px 10px 30px 0;
+}
 
 /* ------------------------------------------------ */
