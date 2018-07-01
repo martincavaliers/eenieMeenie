@@ -2,6 +2,7 @@
 
 const addChoiceBtn = document.getElementById('addChoiceBtn');
 const removeChoicesBtn = document.getElementById('removeChoicesBtn');
+const clearChoicesBtn = document.getElementById('clearChoicesBtn');
 const startBtn = document.getElementById('startBtn');
 const clearLogBtn = document.getElementById('clearLogBtn');
 const inputDiv = document.getElementById('inputDiv');
@@ -50,10 +51,7 @@ startBtn.addEventListener('click', (e) => {
             noValue = true;
         }else{
         let x = inputs[i].value;
-        choiceArray.push(x);
-        // Clears input fields
-        inputs[i].value = ""; 
-        }   
+        choiceArray.push(x);   
     }
     if(noValue === true){
         alert("Please make sure all choices are input correctly");     
@@ -66,6 +64,17 @@ startBtn.addEventListener('click', (e) => {
     const choiceOutput = document.createElement("LI");
     choiceOutput.textContent = choice;
     document.getElementById("displayList").appendChild(choiceOutput);
+    }
+}
+});
+
+// Event listener on clearChoicesBtn
+clearChoicesBtn.addEventListener('click', (e) =>{
+    let inputs = document.querySelectorAll('input');
+    // Clears input fields
+    for(let i = 0; i < inputCount; i++){
+        // Clears input fields
+        inputs[i].value = ""; 
     } 
 });
 
