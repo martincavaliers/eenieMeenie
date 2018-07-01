@@ -22,7 +22,7 @@ body{
 
 #inputDiv input:focus { 
     border: solid rgb(96, 198, 211);
-    text-emphasis-color: black;
+    
 }
 /* ------------------------------------------------ */
 
@@ -30,6 +30,20 @@ body{
 
 #btnDiv button{
     margin: 30px 10px 30px 0;
+}
+
+/* ------------------------------------------------ */
+
+/* Display Div */
+
+#displayDiv{
+    background-color: #f2f0ee;
+    box-shadow: 10px 10px 8px #888888;
+    padding: 30px;
+}
+
+#clearLogBtn{
+    margin: 40px 0 0 0;
 }
 
 /* ------------------------------------------------ */

@@ -52,20 +52,21 @@ startBtn.addEventListener('click', (e) => {
         }else{
         let x = inputs[i].value;
         choiceArray.push(x);   
-    }
+        };
+    
     if(noValue === true){
-        alert("Please make sure all choices are input correctly");     
+    alert("Please make sure all choices are input correctly");     
     }else{
     // Create random number for value selection
     let number = randomNumber(inputCount);
+    console.log(number);
     // Select which value of choiceArray to display
     let choice = choiceArray[number];
     // Log choice into list item
     const choiceOutput = document.createElement("LI");
     choiceOutput.textContent = choice;
     document.getElementById("displayList").appendChild(choiceOutput);
-    }
-}
+    };
 });
 
 // Event listener on clearChoicesBtn
