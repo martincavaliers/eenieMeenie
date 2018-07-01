@@ -1,3 +1,18 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+
+/* Jumbotron */
+
+.jumbotron{
+    background-color: #f2f0ee;
+}
+
+.jumbotron h1{
+    font-family: 'Gloria Hallelujah', cursive;
+    text-decoration: underline;
+}
+
+
+
+/* ------------------------------------------------ */

@@ -1,7 +1,7 @@
 'use strict';
 
 const addChoiceBtn = document.getElementById('addChoiceBtn');
-const removeChoiceBtn = document.getElementById('removeChoiceBtn');
+const removeChoicesBtn = document.getElementById('removeChoicesBtn');
 const startBtn = document.getElementById('startBtn');
 const clearLogBtn = document.getElementById('clearLogBtn');
 const inputDiv = document.getElementById('inputDiv');
