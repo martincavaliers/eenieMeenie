@@ -6,6 +6,7 @@ const clearChoicesBtn = document.getElementById('clearChoicesBtn');
 const startBtn = document.getElementById('startBtn');
 const clearLogBtn = document.getElementById('clearLogBtn');
 const inputDiv = document.getElementById('inputDiv');
+const inputs = document.querySelectorAll('input');
 let inputCount = inputDiv.childElementCount;
 
 let choiceArray = new Array();
@@ -38,36 +39,35 @@ removeChoiceBtn.addEventListener('click', (e) => {
 });
 
 // // Event listener on Start button
-startBtn.addEventListener('click', (e) => {
-    // Clears array each time start button is pressed
+startBtn.addEventListener('click', (e) =>{
+    //     // Clears array each time start button is pressed
     choiceArray = [];
-    // Declares inputs as function to be used throughout event listener
-    let inputs = document.querySelectorAll('input');
     let noValue;
-    // Cycles through all inputs, takes value and then pushes to array
     for(let i = 0; i < inputCount; i++){
-        // Evaluating for empty input fields
-        if(!inputs[i].value){
-            noValue = true;
-        }else{
-        let x = inputs[i].value;
-        choiceArray.push(x);   
-        };
-    
+            if(!inputs[i].value){
+                noValue = true;
+            }else{
+                let x = inputs[i].value;
+                choiceArray.push(x); 
+            }      
+    }
+
     if(noValue === true){
-    alert("Please make sure all choices are input correctly");     
+        alert("Please make sure all choices are input correctly");  
     }else{
-    // Create random number for value selection
-    let number = randomNumber(inputCount);
-    console.log(number);
-    // Select which value of choiceArray to display
-    let choice = choiceArray[number];
-    // Log choice into list item
-    const choiceOutput = document.createElement("LI");
-    choiceOutput.textContent = choice;
-    document.getElementById("displayList").appendChild(choiceOutput);
-    };
+        let number = randomNumber(inputCount);
+
+        // Select which value of choiceArray to display
+        let choice = choiceArray[number];
+
+        // Log choice into list item
+        const choiceOutput = document.createElement("LI");
+        choiceOutput.textContent = choice;
+        document.getElementById("displayList").appendChild(choiceOutput);
+}
+    console.log(choiceArray);
 });
+
 
 // Event listener on clearChoicesBtn
 clearChoicesBtn.addEventListener('click', (e) =>{
