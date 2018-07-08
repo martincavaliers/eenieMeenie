@@ -40,6 +40,7 @@ body{
     background-color: #f2f0ee;
     box-shadow: 10px 10px 8px #888888;
     padding: 30px;
+    margin-bottom: 40px;
 }
 
 #clearLogBtn{

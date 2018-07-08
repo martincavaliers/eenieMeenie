@@ -6,7 +6,6 @@ const clearChoicesBtn = document.getElementById('clearChoicesBtn');
 const startBtn = document.getElementById('startBtn');
 const clearLogBtn = document.getElementById('clearLogBtn');
 const inputDiv = document.getElementById('inputDiv');
-const inputs = document.querySelectorAll('input');
 let inputCount = inputDiv.childElementCount;
 
 let choiceArray = new Array();
@@ -42,6 +41,8 @@ removeChoiceBtn.addEventListener('click', (e) => {
 startBtn.addEventListener('click', (e) =>{
     //     // Clears array each time start button is pressed
     choiceArray = [];
+    // Changes inputs each time start button is clicked as more inputs may be added or removed
+    let inputs = document.querySelectorAll('input');
     let noValue;
     for(let i = 0; i < inputCount; i++){
             if(!inputs[i].value){
